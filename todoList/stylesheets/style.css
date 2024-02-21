@@ -1,0 +1,360 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.todolist-top {
+  display: flex;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 700;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.todolist-top .logout {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.todolist-top .logout a {
+  text-decoration: none;
+  color: #333333;
+  font-weight: 400;
+}
+
+.content {
+  width: 500px;
+  margin: 0 auto;
+  color: #333333;
+}
+.content .input-group {
+  position: relative;
+}
+.content .input-group input {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+.content .input-group img {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.content .list {
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+.content .list-header .tab {
+  display: flex;
+  color: #9F9A91;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 700;
+}
+.content .list-header li {
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+.content .list-header li a {
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  color: #9F9A91;
+  border-bottom: 2px solid #E5E5E5;
+}
+.content .list-header li a:hover, .content .list-header li a.active {
+  color: #333333;
+  border-bottom: 2px solid #333333;
+}
+.content .list-body {
+  padding: 0px 24px;
+}
+.content .list-body li {
+  position: relative;
+  border-bottom: 2px solid #E5E5E5;
+  padding: 16px 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.content .list-body li .checkBtn {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.content .list-body li .editTodoInput {
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  height: 100%;
+  width: 80%;
+  font-size: 16px;
+}
+.content .list-body li .fa-xmark {
+  font-size: 30px;
+  color: #9F9A91;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  opacity: 0;
+  cursor: pointer;
+}
+.content .list-body li .fa-pen-to-square {
+  font-size: 24px;
+  color: #9F9A91;
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.content .list-body li:hover .fa-xmark {
+  opacity: 1;
+}
+.content .list-body li span {
+  padding-left: 44px;
+}
+.content .list-body li span::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%) scale(1);
+  border: 1px solid #333333;
+  border-radius: 5px;
+  transition: 0.3s ease;
+  pointer-events: none;
+}
+.content .list-body li span::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 10px;
+  width: 10px;
+  height: 20px;
+  border-bottom: 3px solid #fde09d;
+  border-right: 3px solid #fde09d;
+  transform: rotate(45deg);
+  transition: 0.3s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+.content .list-body li input:checked ~ span {
+  text-decoration: line-through;
+  color: #9F9A91;
+}
+.content .list-body li input:checked ~ span::before {
+  border-color: transparent;
+  transform: translateY(-50%) scale(0);
+}
+.content .list-body li input:checked ~ span::after {
+  opacity: 1;
+}
+.content .list-body .emptyText {
+  text-align: center;
+  padding: 30px;
+}
+.content .list-footer {
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+.content .list-footer .clear-done {
+  text-decoration: none;
+  color: #9F9A91;
+}
+
+@media (max-width: 768px) {
+  .todolist-top {
+    margin-bottom: 16px;
+  }
+  .todolist-top .logout p {
+    display: none;
+  }
+  .content {
+    width: 310px;
+  }
+  .content .list-header li a {
+    font-size: 14px;
+    padding: 16px;
+  }
+  .content .list-body {
+    padding: 0px 16px;
+  }
+  .content .list-body li .editTodoInput {
+    width: 70%;
+    font-size: 14px;
+  }
+  .content .list-body li .fa-xmark {
+    font-size: 24px;
+    opacity: 1;
+  }
+  .content .list-body li .fa-pen-to-square {
+    font-size: 20px;
+    right: 36px;
+  }
+  .content .list-body li span {
+    font-size: 14px;
+    padding-left: 40px;
+  }
+  .content .list-footer {
+    font-size: 14px;
+  }
+  .content .list-footer .clear-done {
+    text-decoration: none;
+    color: #9F9A91;
+  }
+}
+body {
+  background: #FFD370;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 1024px;
+  margin: 0 auto;
+  padding: 87px 116px;
+}
+
+.loginAndsignup {
+  display: flex;
+  gap: 106px;
+  align-items: center;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.loginAndsignup h3 {
+  color: #333333;
+  font-size: 24px;
+  margin-bottom: 24px;
+  line-height: 1.5rem;
+}
+.loginAndsignup p {
+  margin: 0;
+  color: #D87355;
+}
+.loginAndsignup label {
+  font-size: 14px;
+  line-height: 1.5rem;
+}
+.loginAndsignup .btns {
+  text-align: center;
+}
+.loginAndsignup button {
+  background: #333333;
+  color: #FFFFFF;
+  border: none;
+  width: 128px;
+  height: 47px;
+  border-radius: 10px;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 700;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 24px;
+}
+.loginAndsignup a {
+  text-decoration: none;
+  color: #333333;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 375px;
+    margin: 0 auto;
+    padding: 16px 32px;
+  }
+  .loginAndsignup {
+    width: 310px;
+    margin: 0 auto;
+  }
+  .loginAndsignup img {
+    display: none;
+  }
+  .login .login-block {
+    margin: 0 auto;
+  }
+}
+.display-none {
+  display: none;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.input-field {
+  width: 100%;
+  height: 47px;
+  border-radius: 10px;
+  border: none;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 400;
+  padding-left: 16px;
+  font-size: 16px;
+}/*# sourceMappingURL=style.css.map */

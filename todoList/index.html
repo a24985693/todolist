@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todoList</title>
+    <link rel="stylesheet" href="./stylesheets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="login loginAndsignup ">
+            <img src="./img/left.png" alt="">
+            <div class="login-block">
+                <h3>最實用的線上代辦事項服務</h3>
+                <div class="mb-16">
+                    <label for="loginEmail">Email</label>
+                    <input type="email"class="input-field" id="loginEmail" placeholder="請輸入Email">
+                    <p></p>
+                </div>
+                <div class="mb-24">
+                    <label for="loginPsw">密碼</label>
+                    <input type="password" class="input-field" id="loginPsw" placeholder="請輸入密碼">
+                    <p></p>
+                </div>
+                <div class="btns">
+                    <button id="loginBtn">登入</button>
+                    <a href="#" id="signupAccBtn">註冊帳號</a>
+                </div>
+            </div>
+        </div>
+        <div class="signup loginAndsignup display-none">
+            <img src="./img/left.png" alt="">
+            <div>
+                <h3>註冊帳號</h3>
+                <div class="mb-16">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" class="input-field" id="signupEmail" placeholder="請輸入Email">
+                    <P></P>
+                </div>
+                <div class="mb-16">
+                    <label for="signupName">您的暱稱</label>
+                    <input type="text" class="input-field" id="signupName" placeholder="請輸入您的暱稱">
+                    <P></P>
+                </div>
+                <div class="mb-16">
+                    <label for="signupPsw">密碼</label>
+                    <input type="password" class="input-field" id="signupPsw" placeholder="請輸入密碼">
+                    <P></P>
+                </div>
+                <div class="signup-psw-again mb-24">
+                    <label for="signupPswAgain">再次輸入密碼</label>
+                    <input type="password" class="input-field " id="signupPswAgain" placeholder="請再次輸入密碼">
+                    <P></P>
+                    <p class="remark-pswAgain display-none">密碼不一致，請重新輸入</p>
+                </div>
+                <div class="btns">
+                    <button id="signupBtn">註冊</button>
+                    <a href="" id="loginPageBtn">登入</a>
+                </div>
+            </div>
+        </div>
+        <div class="todolist display-none">
+            <div class="todolist-top">
+                <img src="./img/logo.png" alt="">
+                <div class="logout">
+                    <p id="userName">王小明的代辦</p>
+                    <a href="#" id="logoutBtn">登出</a>
+                </div>
+            </div>
+            <div class="content">
+                <div class="input-group mb-16">
+                    <input type="text" class="input-field" id="inputAddTodo" placeholder="新增代辦事項">
+                    <a href="#" id="addTodoBtn">
+                        <img src="./img/plus.png" alt="">
+                    </a>
+                </div>
+                <div class="list">
+                    <div class="list-header">
+                        <ul class="tab">
+                            <li><a href="#" id="allItems" class="active">全部</a></li>
+                            <li><a href="#" id="undoneItems">待完成</a></li>
+                            <li><a href="#" id="doneItems">已完成</a></li>
+                        </ul>
+                    </div>
+                    <div class="list-body">
+                        <ul id="listUl">
+                            
+                        </ul>
+                    </div>
+                    <div class="list-footer">
+                        <p class="undoneText">0個待完成項目</p>
+                        <a href="#" class="clear-done" id="clearDone">清除已完成項目</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/a9364419c2.js" crossorigin="anonymous"></script>
+    <script src="./all.js"></script>
+</body>
+</html>

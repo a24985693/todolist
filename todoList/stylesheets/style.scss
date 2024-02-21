@@ -1,0 +1,80 @@
+@import "./helpers/reset";
+@import "./components/todolist";
+
+body {
+    background: #FFD370;
+}
+* {
+    box-sizing: border-box;
+}
+.container {
+    width: 1024px;
+    margin: 0 auto;
+    padding: 87px 116px;
+}
+
+.loginAndsignup {
+    display: flex;
+    gap: 106px;
+    align-items: center;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 700;
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    h3 {
+        color: #333333;
+        font-size: 24px;
+        margin-bottom: 24px;
+        line-height: 1.5rem;
+    }
+    p {
+        margin: 0;
+        color: #D87355;
+    }
+    label {
+        font-size: 14px;
+        line-height: 1.5rem;
+    }
+
+    .btns {
+        text-align: center;
+    }
+    button {
+        background: #333333;
+        color: #FFFFFF;
+        border: none;
+        width: 128px;
+        height:47px;    
+        border-radius: 10px;
+        font-family: "Noto Sans TC", sans-serif;
+        font-weight: 700;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 24px;
+    }
+    a {
+        text-decoration: none;
+        color: #333333;
+    }
+}
+@media (max-width: 768px){
+    .container { 
+        width: 375px;
+        margin:0 auto;
+        padding: 16px 32px;
+    }
+    .loginAndsignup {
+        width: 310px;
+        margin:0 auto;
+        img {
+            display: none;
+        }
+    }
+    .login {
+        .login-block{
+            margin: 0 auto;
+        }
+    }
+}
+@import "./helpers/variables";
